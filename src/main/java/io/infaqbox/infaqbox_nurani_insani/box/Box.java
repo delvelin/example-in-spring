@@ -31,17 +31,17 @@ public class Box {
     @Column
     private Integer idArea;
 
-    @Column
+    @Column(nullable = false)
     private String namaTempat;
 
-    @Column(columnDefinition = "longtext")
+    @Column(nullable = false, columnDefinition = "longtext")
     private String alamat;
 
-    @Column
-    private String phone;
+    @Column(nullable = false)
+    private String cpPhone;
 
-    @Column
-    private String cp;
+    @Column(nullable = false)
+    private String cpName;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

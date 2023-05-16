@@ -29,10 +29,16 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String pwd;
+    private String password;
 
-    @Column(nullable = false, unique = true, columnDefinition = "longtext")
-    private String completeName;
+    @Column(nullable = false, unique = true)
+    private String firstName;
+
+    @Column
+    private String lastName;
+
+    @Column
+    private String roles;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

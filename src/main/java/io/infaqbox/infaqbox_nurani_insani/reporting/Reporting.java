@@ -25,23 +25,17 @@ public class Reporting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Integer tglD;
-
-    @Column
-    private Integer tglM;
-
-    @Column
-    private Integer tglY;
-
-    @Column
+    @Column(nullable = false)
     private Long time;
 
-    @Column
+    @Column(nullable = false)
     private Integer boxId;
 
-    @Column
+    @Column(nullable = false)
     private Long userId;
+
+    @Column(nullable = false)
+    private Double jumlah;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

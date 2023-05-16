@@ -1,5 +1,6 @@
 package io.infaqbox.infaqbox_nurani_insani.area;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import lombok.Setter;
 public class AreaDTO {
 
     private Long id;
+    @NotNull
     private String namaArea;
 
 }

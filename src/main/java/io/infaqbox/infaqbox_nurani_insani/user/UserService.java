@@ -48,15 +48,19 @@ public class UserService {
     private UserDTO mapToDTO(final User user, final UserDTO userDTO) {
         userDTO.setId(user.getId());
         userDTO.setUsername(user.getUsername());
-        userDTO.setPwd(user.getPwd());
-        userDTO.setCompleteName(user.getCompleteName());
+        userDTO.setPassword(user.getPassword());
+        userDTO.setFirstName(user.getFirstName());
+        userDTO.setLastName(user.getLastName());
+        userDTO.setRoles(user.getRoles());
         return userDTO;
     }
 
     private User mapToEntity(final UserDTO userDTO, final User user) {
         user.setUsername(userDTO.getUsername());
-        user.setPwd(userDTO.getPwd());
-        user.setCompleteName(userDTO.getCompleteName());
+        user.setPassword(userDTO.getPassword());
+        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDTO.getLastName());
+        user.setRoles(userDTO.getRoles());
         return user;
     }
 
@@ -64,8 +68,13 @@ public class UserService {
         return userRepository.existsByUsernameIgnoreCase(username);
     }
 
+<<<<<<< src/main/java/io/infaqbox/infaqbox_nurani_insani/user/UserService.java
+    public boolean firstNameExists(final String firstName) {
+        return userRepository.existsByFirstNameIgnoreCase(firstName);
+=======
     public boolean completeNameExists(final String completeName) {
         return userRepository.existsByCompleteName(completeName);
+>>>>>>> src/main/java/io/infaqbox/infaqbox_nurani_insani/user/UserService.java
     }
 
 }

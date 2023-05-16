@@ -47,22 +47,18 @@ public class ReportingService {
 
     private ReportingDTO mapToDTO(final Reporting reporting, final ReportingDTO reportingDTO) {
         reportingDTO.setId(reporting.getId());
-        reportingDTO.setTglD(reporting.getTglD());
-        reportingDTO.setTglM(reporting.getTglM());
-        reportingDTO.setTglY(reporting.getTglY());
         reportingDTO.setTime(reporting.getTime());
         reportingDTO.setBoxId(reporting.getBoxId());
         reportingDTO.setUserId(reporting.getUserId());
+        reportingDTO.setJumlah(reporting.getJumlah());
         return reportingDTO;
     }
 
     private Reporting mapToEntity(final ReportingDTO reportingDTO, final Reporting reporting) {
-        reporting.setTglD(reportingDTO.getTglD());
-        reporting.setTglM(reportingDTO.getTglM());
-        reporting.setTglY(reportingDTO.getTglY());
         reporting.setTime(reportingDTO.getTime());
         reporting.setBoxId(reportingDTO.getBoxId());
         reporting.setUserId(reportingDTO.getUserId());
+        reporting.setJumlah(reportingDTO.getJumlah());
         return reporting;
     }
 

@@ -18,9 +18,17 @@ public class UserDTO {
 
     @NotNull
     @Size(max = 255)
-    private String pwd;
+    private String password;
 
     @NotNull
-    private String completeName;
+    @Size(max = 255)
+    private String firstName;
+
+    @Size(max = 255)
+    private String lastName;
+
+    @Size(max = 255)
+    private String roles;
+
 
 }

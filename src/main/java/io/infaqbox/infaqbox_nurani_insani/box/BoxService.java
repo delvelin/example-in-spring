@@ -51,8 +51,8 @@ public class BoxService {
         boxDTO.setIdArea(box.getIdArea());
         boxDTO.setNamaTempat(box.getNamaTempat());
         boxDTO.setAlamat(box.getAlamat());
-        boxDTO.setPhone(box.getPhone());
-        boxDTO.setCp(box.getCp());
+        boxDTO.setCpPhone(box.getCpPhone());
+        boxDTO.setCpName(box.getCpName());
         return boxDTO;
     }
 
@@ -61,8 +61,8 @@ public class BoxService {
         box.setIdArea(boxDTO.getIdArea());
         box.setNamaTempat(boxDTO.getNamaTempat());
         box.setAlamat(boxDTO.getAlamat());
-        box.setPhone(boxDTO.getPhone());
-        box.setCp(boxDTO.getCp());
+        box.setCpPhone(boxDTO.getCpPhone());
+        box.setCpName(boxDTO.getCpName());
         return box;
     }
 

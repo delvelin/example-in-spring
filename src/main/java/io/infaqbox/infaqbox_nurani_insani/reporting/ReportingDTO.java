@@ -1,5 +1,6 @@
 package io.infaqbox.infaqbox_nurani_insani.reporting;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,11 +10,18 @@ import lombok.Setter;
 public class ReportingDTO {
 
     private Long id;
-    private Integer tglD;
-    private Integer tglM;
-    private Integer tglY;
+
+    @NotNull
     private Long time;
+
+    @NotNull
     private Integer boxId;
+
+    @NotNull
     private Long userId;
+
+    @NotNull
+    private Double jumlah;
+
 
 }
