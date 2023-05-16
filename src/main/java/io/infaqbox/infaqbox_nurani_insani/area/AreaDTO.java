@@ -10,7 +10,6 @@ import lombok.Setter;
 public class AreaDTO {
 
     private Long id;
-
     @NotNull
     private String namaArea;
 

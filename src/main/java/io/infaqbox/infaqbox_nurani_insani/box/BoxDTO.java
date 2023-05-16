@@ -17,6 +17,7 @@ public class BoxDTO {
 
     private Integer idArea;
 
+<<<<<<< src/main/java/io/infaqbox/infaqbox_nurani_insani/box/BoxDTO.java
     @NotNull
     @Size(max = 255)
     private String namaTempat;
@@ -31,5 +32,17 @@ public class BoxDTO {
     @NotNull
     @Size(max = 255)
     private String cpName;
+=======
+    @Size(max = 255)
+    private String namaTempat;
+
+    private String alamat;
+
+    @Size(max = 255)
+    private String phone;
+
+    @Size(max = 255)
+    private String cp;
+>>>>>>> src/main/java/io/infaqbox/infaqbox_nurani_insani/box/BoxDTO.java
 
 }

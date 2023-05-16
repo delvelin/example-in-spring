@@ -68,8 +68,13 @@ public class UserService {
         return userRepository.existsByUsernameIgnoreCase(username);
     }
 
+<<<<<<< src/main/java/io/infaqbox/infaqbox_nurani_insani/user/UserService.java
     public boolean firstNameExists(final String firstName) {
         return userRepository.existsByFirstNameIgnoreCase(firstName);
+=======
+    public boolean completeNameExists(final String completeName) {
+        return userRepository.existsByCompleteName(completeName);
+>>>>>>> src/main/java/io/infaqbox/infaqbox_nurani_insani/user/UserService.java
     }
 
 }

@@ -23,4 +23,5 @@ public class ReportingDTO {
     @NotNull
     private Double jumlah;
 
+
 }
