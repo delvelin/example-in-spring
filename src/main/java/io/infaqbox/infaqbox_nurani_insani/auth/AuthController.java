@@ -8,6 +8,7 @@ import io.infaqbox.infaqbox_nurani_insani.user.UserSecurity;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping(value = "/api/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -32,7 +33,7 @@ public class AuthController {
 
     private final JwtUtils jwtUtils;
 
-    @PostMapping("/authenticate")
+    @PostMapping("/signin")
     public ResponseEntity<String> authenticate(@RequestBody AuthenticationRequest request, HttpServletResponse response) {
         try {
             authenticationManager
@@ -43,12 +44,13 @@ public class AuthController {
                 String jwt = jwtUtils.generateToken(user);
                 Cookie cookie = new Cookie("jwt", jwt);
                 cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
-//                cookie.setSecure(true);
+                cookie.setSecure(true);
                 cookie.setHttpOnly(true);
                 cookie.setPath("/"); // Global
                 response.addCookie(cookie);
                 return ResponseEntity.ok(jwt);
             }
+
             return ResponseEntity.status(400).body("Error authenticating");
         } catch (Exception e) {
             System.out.println(e);
@@ -56,7 +58,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/register")
+    @PostMapping("/signup")
     public ResponseEntity<UserSecurity> register(@RequestBody UserRequest user) throws Exception {
         return ResponseEntity.ok(authService.AddUser(user).map(UserSecurity::new).orElseThrow(() -> new Exception("Unknown")));
     }
