@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/reportings", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ReportingResource {
+public class ReportingController {
 
     private final ReportingService reportingService;
 
-    public ReportingResource(final ReportingService reportingService) {
+    public ReportingController(final ReportingService reportingService) {
         this.reportingService = reportingService;
     }
 
