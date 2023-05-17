@@ -32,10 +32,20 @@ public class SecurityConfig {
                 .cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**")
+                        .requestMatchers(
+                                "/api/**",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/v2/api-docs",
+                                "/configuration/ui",
+                                "/swagger-resources/**",
+                                "/configuration/security",
+                                "/swagger-ui.html",
+                                "/webjars/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())
+
 
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

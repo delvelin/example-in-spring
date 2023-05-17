@@ -11,7 +11,7 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String index() {
-        return "Hello World!";
+        return "Bismillah. Laporan Infaq Box Nuari Insani";
     }
 
 }
