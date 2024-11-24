@@ -1,33 +1,28 @@
-# InfaqboxNuraniInsani
+# Using delvelin plugin in Spring projects
 
-This app was created with Bootify.io - tips on working with the code [can be found here](https://bootify.io/next-steps/). Feel free to contact us for further questions.
-
-## Development
-
-During development it is recommended to use the profile `local`. In IntelliJ, `-Dspring.profiles.active=local` can be added in the VM options of the Run Configuration after enabling this property in "Modify options".
-
-Update your local database connection in `application.properties` or create your own `application-local.properties` file to override settings for development.
-
-Lombok must be supported by your IDE. For this, in IntelliJ install the Lombok plugin and enable annotation processing - [learn more](https://bootify.io/next-steps/spring-boot-with-lombok.html).
-
-After starting the application it is accessible under `localhost:8080`.
-
-## Build
-
-The application can be built using the following command:
-
+## Setup
+```groovy
+plugins {
+    id 'org.springframework.boot' version '3.0.6'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'io.github.hangga.delvelin' version '0.0.18-beta1'
+}
 ```
-gradlew clean build
+## Configuration
+```groovy
+delvelin {
+    outputFileFormat = 'HTML' // Options: LOG, JSON, HTML
+    showDate = true
+    showSaveDialog = false
+}
 ```
-
-The application can then be started with the following command - here with the profile `production`:
-
+## Running the Analysis
+Open terminal and run the delvelinScan task to analyze our project:
+```shell
+./gradlew delvelinScan
 ```
-java -Dspring.profiles.active=production -jar ./build/libs/infaqbox-nurani-insani-0.0.1-SNAPSHOT.jar
-```
+If we are using Intellij IDEA, we can also use the gradle menu in the sidebar:
 
-## Further readings
-
-* [Gradle user manual](https://docs.gradle.org/)  
-* [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
-* [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)  
+<img width="350" src="https://github.com/hangga/delvelin/blob/main/delvelin-scan-gradle-menu.png?
+raw=true" alt="sidebar"/>
