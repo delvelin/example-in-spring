@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '3.0.6'
     id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
-    id 'io.github.hangga.delvelin' version '0.0.18-beta1'
+    id 'io.github.hangga.delvelin' version '0.0.19-beta'
 }
 
 group = 'io.infaqbox'
@@ -36,6 +36,9 @@ dependencies {
     developmentOnly('org.springframework.boot:spring-boot-devtools')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     implementation('javax.xml.bind:jaxb-api:2.3.0')
+    implementation('com.google.guava:guava:31.1-jre')
+    implementation('org.hibernate.orm:hibernate-core:7.0.0.Beta1')
+    implementation('org.apache.logging.log4j:log4j-core:2.0-beta9')
 }
 
 tasks.named('test') {
@@ -44,6 +47,4 @@ tasks.named('test') {
 
 delvelin {
     outputFileFormat = 'HTML' // Options: LOG, JSON, HTML
-    showDate = true
-    showSaveDialog = false
 }
