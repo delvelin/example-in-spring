@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '3.0.6'
     id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
-    id 'io.github.hangga.delvelin' version '0.0.21-beta'
+    id 'io.github.hangga.delvelin' version '0.1.0-beta'
 }
 
 group = 'io.infaqbox'
